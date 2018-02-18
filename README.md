@@ -9,7 +9,7 @@ $ python python-u2flib-server/examples/u2f_server.py
 
 You can register a U2F device using the following python snippet:
 
-[Source link](https://github.com/mirzlab/u2f-authn/blob/master/u2f-register.py)
+[Source link](https://github.com/mirzlab/python-yubico-u2f-authn/blob/master/u2f-register.py)
 
 ```sh
 $ git clone https://github.com/mirzlab/u2f-authn.git
@@ -28,7 +28,7 @@ Registration sucessful
 
 You can authenticate a U2F device using the following python snippet:
 
-[Source link](https://github.com/mirzlab/u2f-authn/blob/master/u2f-authn.py)
+[Source link](https://github.com/mirzlab/python-yubico-u2f-authn/blob/master/u2f-authn.py)
 
 ```sh
 $ git clone https://github.com/mirzlab/u2f-authn.git
