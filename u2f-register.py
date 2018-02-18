@@ -1,13 +1,10 @@
 import time
 import json
-import argparse
 import sys
 import requests
 
 from u2flib_host import u2f, exc
 from u2flib_host.constants import APDU_USE_NOT_SATISFIED
-from u2flib_host.utils import u2str
-from u2flib_host.yubicommon.compat import text_type
 
 serverUrl = "http://localhost:8081";
 
@@ -55,7 +52,7 @@ def getRegistrationRequestData():
     return registrationRequestData
 
 def registerDevice(device, registrationRequestData):
-    sys.stdout.write('\nTouch the U2F device you wish to register...\n')
+    print "Touch the U2F device you wish to register..."
     while 1:
         try:
             registerResponse = u2f.register(device, json.dumps(registrationRequestData), serverUrl)

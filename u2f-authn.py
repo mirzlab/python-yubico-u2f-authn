@@ -1,13 +1,10 @@
 import time
 import json
-import argparse
 import sys
 import requests
 
 from u2flib_host import u2f, exc
 from u2flib_host.constants import APDU_USE_NOT_SATISFIED
-from u2flib_host.utils import u2str
-from u2flib_host.yubicommon.compat import text_type
 
 serverUrl = "http://localhost:8081";
 
@@ -52,8 +49,7 @@ def getAuthenticationRequestData():
     return authenticationRequestData
 
 def verifyAuthentication(device, authenticationRequestData):
-    # Enumerate available devices
-    sys.stdout.write('\nTouch the U2F device you wish to authenticate...\n')
+    print "Touch the U2F device you wish to authenticate..."
     while 1:
         try:
             try:
