@@ -8,7 +8,6 @@ from u2flib_host import u2f, exc
 from u2flib_host.constants import APDU_USE_NOT_SATISFIED
 from u2flib_host.utils import u2str
 from u2flib_host.yubicommon.compat import text_type
-from U2FClient import U2FClient
 
 serverUrl = "http://localhost:8081";
 

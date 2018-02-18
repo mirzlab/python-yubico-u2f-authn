@@ -8,7 +8,6 @@ from u2flib_host import u2f, exc
 from u2flib_host.constants import APDU_USE_NOT_SATISFIED
 from u2flib_host.utils import u2str
 from u2flib_host.yubicommon.compat import text_type
-from U2FClient import U2FClient
 
 serverUrl = "http://localhost:8081";
 
@@ -61,12 +60,9 @@ def verifyAuthentication(device, authenticationRequestData):
                 authenticateResponse = u2f.authenticate(device, json.dumps(authenticationRequestData), serverUrl)
                 params = "data=" + json.dumps(authenticateResponse)
                 verifyResponse = serverCall(serverUrl, "verify", params)
+                return "counter" in verifyResponse
             except:
                 pass
-            if "counter" not in verifyResponse:
-                return False
-            else:
-                return True
         except exc.APDUError as e:
             if e.code == APDU_USE_NOT_SATISFIED:
                 pass
